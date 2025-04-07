@@ -88,8 +88,7 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
-        # 'PASSWORD': os.getenv('DB_PASS'),
-        'PASSWORD': 'v.9h3$tz#0=+5OH4JY',
+        'PASSWORD': os.getenv('DB_PASS'),
         'OPTIONS': {
             'charset': 'utf8mb4',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
