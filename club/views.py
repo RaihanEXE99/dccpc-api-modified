@@ -71,9 +71,21 @@ class GalleryListAPIView(ListAPIView):
 
 class PanelMemberListAPIView(ListAPIView):
     serializer_class = PanelMemberSerializer
-    
+
     def get_queryset(self):
+        # Get the category from query params, default to 'panel' if not provided
         category = self.request.query_params.get('category', 'panel')
+
+        # Define valid categories based on the model choices
+        valid_categories = [choice[0] for choice in PanelMember.CATEGORY_CHOICES]
+
+        # Check if the provided category is valid, otherwise default to 'panel'
+        # This prevents potential errors if an invalid category is sent.
+        # Alternatively, you could raise a ValidationError here if you prefer strict checking.
+        if category not in valid_categories:
+            category = 'panel' # Or return PanelMember.objects.none() if you prefer empty list for invalid
+
+        # Filter the queryset based on the validated category
         return PanelMember.objects.filter(category=category)
 
 
