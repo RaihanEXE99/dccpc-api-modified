@@ -62,18 +62,20 @@ class MemberAdmin(admin.ModelAdmin):
 
 @admin.register(PanelMember)
 class PanelMemberAdmin(admin.ModelAdmin):
-    list_display = ('name', 'designation','category', 'ordering', 'created_at')
-    list_editable = ('ordering','category')
+    list_display = ('name', 'designation', 'category', 'ordering', 'created_at')
+    list_editable = ('ordering', 'category')
+    list_filter = ('category',)
 
     fieldsets = (
         ('Basic Information', {
-            'fields': ('category','name', 'designation', 'ordering', 'image')
+            'fields': ('category', 'name', 'designation', 'ordering', 'image')
         }),
         ('Social Media', {
             'fields': ('facebook', 'github', 'linkedin'),
             'classes': ('collapse',)
         })
     )
+
 
 
 @admin.register(Event)
