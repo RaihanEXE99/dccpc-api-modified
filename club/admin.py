@@ -62,12 +62,12 @@ class MemberAdmin(admin.ModelAdmin):
 
 @admin.register(PanelMember)
 class PanelMemberAdmin(admin.ModelAdmin):
-    list_display = ('name', 'designation', 'ordering', 'created_at')
-    list_editable = ('ordering',)
+    list_display = ('name', 'designation','category', 'ordering', 'created_at')
+    list_editable = ('ordering','category')
 
     fieldsets = (
         ('Basic Information', {
-            'fields': ('name', 'designation', 'ordering', 'image')
+            'fields': ('category','name', 'designation', 'ordering', 'image')
         }),
         ('Social Media', {
             'fields': ('facebook', 'github', 'linkedin'),
