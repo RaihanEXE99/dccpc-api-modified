@@ -2,85 +2,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: auto;
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 80px;
-            margin: 0 auto 20px auto;
-        }
-
-        .welcome-heading {
-            font-size: 24px;
-            font-weight: bold;
-            color: #14345d;
-            margin-bottom: 15px;
-        }
-
-        a.btn {
-            display: inline-block;
-            padding: 10px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #14345d;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to DCC Programming Club</title>
 </head>
-<body>
-<div class="container">
-    <img src="https://dccpc.club/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-cropped.f989e407.png&w=64&q=75"
-         alt="Club Logo" class="logo">
-         
-    <div class="welcome-heading">🎉 Welcome to DCC Programming Club, {{ member.name }}! 🎉</div>
-    
-    <p>We are thrilled to have you on board! Get ready to dive into an exciting world of 
-    problem-solving, programming contests, and endless learning opportunities.
-    </p>
-    <p style="font-weight: bold;">Your journey into the world of programming begins here!</p>
-    
-    <p>✨ Your Registered Email: {{ member.email }} </p>
-    <p>📌 Batch: {{ member.batch }} ({{ member.education }})</p>
-    
-    <p>To stay connected, we have an exclusive <strong>WhatsApp group for members</strong>! To join, please reach out to your class representative.</p>
-    
-    <a href="https://dccpc.club" class="btn">Visit Our Website</a>
-    
-    <p><strong>💡 Have any questions? We're here to help!</strong></p>
-    
-    <p>📩 Feel free to visit our Contact Us page or email us at dccpc.official@gmail.com.</p>
-    
-    <p>Welcome aboard, and let's start this amazing programming journey together! 🚀💻</p>
-    
-    <p><strong>Happy Coding :)</strong></p>
-    
-    <div class="footer">
-        <p>DCC Programming Club | Dhaka City College</p>
-        <p>If you didn't register for this, please ignore this email.</p>
-    </div>
-</div>
+<body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: #f7f9fc; color: #333333; line-height: 1.6;">
+    <!-- Gmail-compatible container -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;">
+        <tr>
+            <td align="center" valign="top">
+                <!-- Main email container -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); margin: 20px auto;">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" valign="middle" style="background-color: #14345D; padding: 25px 0; border-radius: 8px 8px 0 0;">
+                            <!-- Logo container with white background -->
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center" style="background-color: #ffffff!important; width: 80px; height: 80px; border-radius: 50%; padding: 10px;">
+                                        <img src="https://dccpc.club/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-cropped.f989e407.png&w=64&q=75" alt="Club Logo" width="60" height="60" style="display: block; border: 0;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Content area -->
+                    <tr>
+                        <td align="center" style="padding: 30px 20px;">
+                            <!-- Welcome heading -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="font-size: 22px; font-weight: bold; color: #14345D; padding: 0 0 20px 0;">
+                                        🎉 Welcome to DCC Programming Club, {{ member.name }}! 🎉
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding: 0 0 15px 0;">
+                                        <p style="margin: 0; color: #555555; font-size: 16px;">
+                                            We are thrilled to have you on board! Get ready to dive into an exciting world of 
+                                            problem-solving, programming contests, and endless learning opportunities.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding: 0 0 25px 0;">
+                                        <p style="margin: 0; font-weight: bold; color: #333333; font-size: 16px;">
+                                            Your journey into the world of programming begins here!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Member info block -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0 0 25px 0;">
+                                <tr>
+                                    <td style="background-color: #f0f5ff; border-left: 4px solid #14345D; padding: 15px; border-radius: 4px;">
+                                        <p style="margin: 0 0 10px 0; color: #333333; font-size: 15px;">
+                                            ✨ Your Registered Email: {{ member.email }}
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 15px;">
+                                            📌 Batch: {{ member.batch }} ({{ member.education }})
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- WhatsApp group info -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0 0 25px 0;">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; color: #555555; font-size: 16px;">
+                                            To stay connected, we have an exclusive <strong>WhatsApp group for members</strong>! To join, please reach out to your class representative.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- CTA Button -->
+                            <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 0 25px 0;">
+                                <tr>
+                                    <td align="center" bgcolor="#14345D" style="border-radius: 6px; padding: 12px 30px;">
+                                        <a href="https://dccpc.club" style="color: #ffffff; text-decoration: none; display: inline-block; font-weight: bold; font-size: 16px;">Visit Our Website</a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Help section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0 0 25px 0; background-color: #f8fafc; border-radius: 6px;">
+                                <tr>
+                                    <td align="center" style="padding: 15px;">
+                                        <p style="margin: 0 0 10px 0; color: #333333; font-size: 15px;">
+                                            <strong>💡 Have any questions? We're here to help!</strong>
+                                        </p>
+                                        <p style="margin: 0; color: #555555; font-size: 15px;">
+                                            📩 Feel free to visit our Contact Us page or email us at dccpc.official@gmail.com.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Final messages -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding: 0 0 15px 0;">
+                                        <p style="margin: 0; color: #555555; font-size: 16px;">
+                                            Welcome aboard, and let's start this amazing programming journey together! 🚀💻
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; color: #14345D; font-size: 16px; font-weight: bold;">
+                                            Happy Coding :)
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color: #f1f5f9; padding: 20px; border-radius: 0 0 8px 8px; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 0 0 5px 0; color: #777777; font-size: 12px;">
+                                DCC Programming Club | Dhaka City College
+                            </p>
+                            <p style="margin: 0; color: #777777; font-size: 12px;">
+                                If you didn't register for this, please ignore this email.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
