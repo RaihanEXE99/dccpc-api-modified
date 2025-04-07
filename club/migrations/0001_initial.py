@@ -43,8 +43,6 @@ class Migration(migrations.Migration):
                 ('expectation', models.CharField(max_length=255)),
                 ('joined_date', models.DateField(null=True)),
                 ('facebook', models.CharField(blank=True, max_length=255, null=True)),
-                ('instagram', models.CharField(blank=True, max_length=255, null=True)),
-                ('twitter', models.CharField(blank=True, max_length=255, null=True)),
                 ('linkedin', models.CharField(blank=True, max_length=255, null=True)),
                 ('transaction_id', models.CharField(blank=True, max_length=20, null=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),

@@ -1,14 +1,17 @@
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from tinymce.models import HTMLField
+from datetime import date
 
 
 class Gallery(models.Model):
     title = models.CharField(max_length=255)
+    description = models.TextField(null=True, blank=True)
     image = models.ImageField(
         upload_to='gallery/',
         validators=[FileExtensionValidator(['png', 'jpg', 'jpeg'])]
     )
+    event_date = models.DateField(default=date.today)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -19,7 +22,7 @@ class Gallery(models.Model):
         verbose_name = 'Gallery'
         verbose_name_plural = 'Gallery'
         db_table = 'club_gallery'
-        ordering = ['-created_at']
+        ordering = ['-event_date']  
 
 
 class Member(models.Model):
