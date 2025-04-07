@@ -57,12 +57,23 @@ class Member(models.Model):
 
 
 class PanelMember(models.Model):
+    CATEGORY_CHOICES = [
+        ('panel', 'Panel Member'),
+        ('teachers', 'Teachers Advisory Panel'),
+        ('alumni', 'Alumni Advisory Panel')
+    ]
+    
     name = models.CharField(max_length=150)
     image = models.ImageField(
         upload_to='panel_members/',
         validators=[FileExtensionValidator(['png', 'jpg', 'jpeg'])]
     )
     designation = models.CharField(max_length=100)
+    category = models.CharField(
+        max_length=20, 
+        choices=CATEGORY_CHOICES, 
+        default='panel'
+    )
     linkedin = models.CharField(max_length=255, null=True, blank=True)
     github = models.CharField(max_length=255, null=True, blank=True)
     facebook = models.CharField(max_length=255, null=True, blank=True)
@@ -71,13 +82,13 @@ class PanelMember(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.get_category_display()}"
 
     class Meta:
         verbose_name = 'Panel Member'
         verbose_name_plural = 'Panel Members'
         db_table = 'club_panel_members'
-        ordering = ['ordering']
+        ordering = ['category', 'ordering']
 
 
 class Event(models.Model):

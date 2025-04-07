@@ -22,6 +22,8 @@ class GallerySerializer(serializers.ModelSerializer):
 
 
 class PanelMemberSerializer(serializers.ModelSerializer):
+    category_display = serializers.CharField(source='get_category_display', read_only=True)
+    
     class Meta:
         model = PanelMember
         fields = '__all__'

@@ -68,9 +68,13 @@ class GalleryListAPIView(ListAPIView):
         return queryset
 
 
+
 class PanelMemberListAPIView(ListAPIView):
     serializer_class = PanelMemberSerializer
-    queryset = PanelMember.objects.all()
+    
+    def get_queryset(self):
+        category = self.request.query_params.get('category', 'panel')
+        return PanelMember.objects.filter(category=category)
 
 
 class EventListAPIView(ListAPIView):
