@@ -38,6 +38,7 @@ class MemberCreateAPIView(CreateAPIView):
                     'email': member_email,
                     'name': member['name'],
                     'batch': member['batch'],
+                    'education': member['education']
                 }
             })
 

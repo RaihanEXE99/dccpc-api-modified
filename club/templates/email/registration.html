@@ -1,3 +1,4 @@
+<!-- File: club/templates/email/registration.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,6 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             padding: 20px;
-            text-align: center;
         }
 
         .container {
@@ -16,22 +16,31 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: auto;
+            text-align: center;
         }
 
         .logo {
-            max-width: 150px;
+            max-width: 80px;
             margin: 0 auto 20px auto;
+        }
+
+        .welcome-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #14345d;
+            margin-bottom: 15px;
         }
 
         a.btn {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 10px 25px;
             font-size: 16px;
             font-weight: bold;
             color: white;
             background-color: #14345d;
             text-decoration: none;
             border-radius: 5px;
+            margin: 15px 0;
         }
 
         .footer {
@@ -42,18 +51,36 @@
     </style>
 </head>
 <body>
-<div class="container" style="text-align: center">
+<div class="container">
     <img src="https://dccpc.club/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-cropped.f989e407.png&w=64&q=75"
          alt="Club Logo" class="logo">
-    <h2>Welcome to DCC Programming Club, {{ member.name }}! 🎉</h2>
-    <p>We are excited to have you as a part of our community. Here, you will explore problem-solving, programming
-        contests, and learning opportunities.</p>
-    <p><strong>Your Registered Email:</strong> {{ member.email }}</p>
-    <p><strong>Batch:</strong> {{ member.batch }}</p>
-    <p>Please contact you batch representative for more information. You can visit our website for more details.</p>
+         
+    <div class="welcome-heading">🎉 Welcome to DCC Programming Club, {{ member.name }}! 🎉</div>
+    
+    <p>We are thrilled to have you on board! Get ready to dive into an exciting world of 
+    problem-solving, programming contests, and endless learning opportunities.
+    </p>
+    <p style="font-weight: bold;">Your journey into the world of programming begins here!</p>
+    
+    <p>✨ Your Registered Email: {{ member.email }} </p>
+    <p>📌 Batch: {{ member.batch }} ({{ member.education }})</p>
+    
+    <p>To stay connected, we have an exclusive <strong>WhatsApp group for members</strong>! To join, please reach out to your class representative.</p>
+    
     <a href="https://dccpc.club" class="btn">Visit Our Website</a>
-    <p class="footer">If you have any questions, feel free to contact us at dccpc.official@gmail.com or visit the
-        club.</p>
+    
+    <p><strong>💡 Have any questions? We're here to help!</strong></p>
+    
+    <p>📩 Feel free to visit our Contact Us page or email us at dccpc.official@gmail.com.</p>
+    
+    <p>Welcome aboard, and let's start this amazing programming journey together! 🚀💻</p>
+    
+    <p><strong>Happy Coding :)</strong></p>
+    
+    <div class="footer">
+        <p>DCC Programming Club | Dhaka City College</p>
+        <p>If you didn't register for this, please ignore this email.</p>
+    </div>
 </div>
 </body>
 </html>
