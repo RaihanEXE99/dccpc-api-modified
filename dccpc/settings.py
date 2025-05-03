@@ -30,8 +30,6 @@ DEBUG = os.getenv('DEBUG') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS').split(',')
 
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -79,17 +77,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dccpc.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE'),
         'HOST': os.getenv('DB_HOST'),
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
-        # 'PASSWORD': os.getenv('DB_PASS'),
-        'PASSWORD': 'v.9h3$tz#0=+5OH4JY',
+        'PASSWORD': os.getenv('DB_PASS'),
         'OPTIONS': {
             'charset': 'utf8mb4',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
@@ -97,8 +91,6 @@ DATABASES = {
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
