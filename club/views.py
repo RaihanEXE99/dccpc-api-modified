@@ -59,14 +59,27 @@ class MemberCreateAPIView(CreateAPIView):
 class GalleryListAPIView(ListAPIView):
     serializer_class = GallerySerializer
     queryset = Gallery.objects.all()
+    pagination_class = None  # Disable pagination for this view to return all images
 
     def get_queryset(self):
         queryset = super().get_queryset()
         year = self.request.query_params.get('year')
+        limit = self.request.query_params.get('limit')
+        
         if year:
             queryset = queryset.filter(event_date__year=year)
+        
+        if limit and limit.isdigit():
+            queryset = queryset[:int(limit)]
+            
         return queryset
 
+
+class HomeGalleryListAPIView(ListAPIView):
+    """API view that returns only 4 most recent gallery images for the homepage"""
+    serializer_class = GallerySerializer
+    pagination_class = None  # Disable pagination for this view too
+    queryset = Gallery.objects.all()[:4]
 
 
 class PanelMemberListAPIView(ListAPIView):
